@@ -1,8 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
 
+app.use(cors());
+
+// servir archivos estáticos
 app.use(express.static('./dist/app1'));
 
 app.get('/*', function (req, res) {
